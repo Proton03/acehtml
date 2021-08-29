@@ -392,10 +392,10 @@ def download_video(message, video):
     topic = video[3]
     quote = video[4]
 
-    if "magnetoscript" in link and ("brightcove" in link or len(link.split("/")[-1]) == 13):
+    if "numberthree" in link and ("brightcove" in link or len(link.split("/")[-1]) == 13):
         vid_id = link[-13:]
         link = f"https://numberthree.herokuapp.com/{vid_id}"
-    elif "magnetoscript" in link and "jwp" in link:
+    elif "numberthree" in link and "jwp" in link:
         vid_id = link[-8:]
         link = f"https://numberthree.herokuapp.com/{vid_id}"
     elif "jwplayer" in link and link.endswith('.m3u8'):
@@ -417,7 +417,7 @@ def download_video(message, video):
             ytf = 22
         else:
             ytf = 18
-    elif ("deshdeepak" in link and len(link.split("/")[-1]) == 13):
+    elif ("numberthree" in link and len(link.split("/")[-1]) == 13):
         if vid_format not in ["144", "240", "360", "480", "720"]:
             f"http://numberthree.herokuapp.com/{vid_id}"
             vid_format = "360"
